@@ -1,9 +1,9 @@
 
 import './App.css';
-import { NavBar } from './components/NavBar';
-import { Banner } from './components/Banner';
-import {Skills} from './components/Skills';
-import { Projects } from './components/Projects';
+import { NavBar } from './Components/NavBar';
+import { Banner } from './Components/Banner';
+import {Skills} from './Components/Skills';
+import { Projects } from './Components/Projects';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (

@@ -73,7 +73,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
 }
 span.navbar-text {
-  display: flex;
+  display: flex;  
   align-items: center;
 }
 .social-icon{
