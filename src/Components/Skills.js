@@ -6,7 +6,29 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
-export const Skills=()=>{         
+
+const skills = [
+  ["Node.js", meter1],
+  ["TypeScript", meter1],
+  ["Express.js", meter1],
+  ["REST APIs & Microservices", meter1],
+  ["RabbitMQ / Event-Driven", meter2],
+  ["Oracle & PL/SQL", meter1],
+  ["MongoDB", meter2],
+  ["MySQL", meter2],
+  ["Redis", meter3],
+  ["Docker & NGINX", meter2],
+  ["AWS", meter3],
+  ["GitLab CI/CD", meter2],
+  ["Application Security", meter2],
+  ["SWIFT / ISO 20022", meter2],
+  ["MCP & Claude Code", meter2],
+  ["React.js", meter3],
+  ["Java", meter3],
+  ["Python", meter3],
+];
+
+export const Skills=()=>{
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -33,71 +55,21 @@ export const Skills=()=>{
                <Col>
                <div className="skill-box">
                 <h2>Skills</h2>
-                    <p> Lorem ipsum for now.....Lorem ipsum for now.....Lorem ipsum for now.....Lorem ipsum for now.....Lorem ipsum for now.....</p>
+                    <p>Backend-first: Node.js and TypeScript services, event-driven messaging and well-tuned databases, shipped with Docker, NGINX and CI/CD.<br/>Domain depth in payments, forex & treasury, KYC and regulatory compliance.</p>
                     <Carousel responsive={responsive} infinite={true} className="skill-slider">
-                      <div className="item">
-                       <img className="img-fluid" src={meter1} alt='project 1'/>
-                       <h5>HTML</h5>
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter2} alt='project 2'/>
-                       <h5>CSS</h5>
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter3} alt='project 3'/>
-                       <h5>Bootstrap</h5>
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter1} alt='project 1'/>
-                       <h5>JavaScript</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter3} alt='project 3'/>
-                       <h5>Data Structures and Algorithms</h5>
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter3} alt='project 1'/>
-                       <h5>ReactJS</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter2} alt='project 1'/>
-                       <h5>NodeJS</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter3} alt='project 1'/>
-                       <h5>MongoDB</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter3} alt='project 1'/>
-                       <h5>ExpressJS</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter2} alt='project 1'/>
-                       <h5>SQL</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter1} alt='project 1'/>
-                       <h5>Python</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter3} alt='project 1'/>
-                       <h5>Java</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter1} alt='project 1'/>
-                       <h5>Git</h5>  
-                      </div>
-                      <div className="item">
-                       <img className="img-fluid" src={meter1} alt='project 1'/>
-                       <h5>Communication Skills</h5>  
-                      </div>
+                      {skills.map(([name, meter])=>(
+                        <div className="item" key={name}>
+                         <img className="img-fluid" src={meter} alt=""/>
+                         <h5>{name}</h5>
+                        </div>
+                      ))}
                     </Carousel>
-                    
+
                </div>
                </Col>
             </Row>
          </Container>
          <img className="background-image-left " src={colorSharp} alt="background"/>
     </section>
- )   
+ )
 }
