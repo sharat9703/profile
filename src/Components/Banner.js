@@ -1,12 +1,13 @@
 import React,{ useState , useEffect } from "react";
 import {Container,Row,Col} from "react-bootstrap";
 import {ArrowUpRightCircle} from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg"; 
+import headerImg from "../assets/img/header-img.svg";
+import { LINKEDIN } from "../links";
 
 export const Banner = ()=>{
     const [loopNum,setLoopNum] = useState(0);
     const [isDeleting,setIsDeleting] = useState(false);
-    const toRotate = ["Web Developer", "Front-end Developer","Full-Stack Developer"];
+    const toRotate = ["Backend Engineer", "Node.js & TypeScript Developer", "FinTech Engineer"];
     const  [text,setText] = useState("");
     const [delta,setdelta] = useState(200- Math.random()*100);
     const period = 1000;
@@ -42,10 +43,10 @@ return(
         <Container>
             <Row className="align-items-center">
               <Col xs={12} md={6} xl={7}>
-                <span className="tagline">Welcome to my Portfolio!</span>
+                <span className="tagline">Software Development Engineer (Backend)</span>
                 <h1>{`Hi, I am Sharat,`} <br/><span className="wrap">a {text}</span></h1>
-                <p>I hail from a small town called Sankeshwar. Love working on M.E.R.N.(MongoDB,Express.js,React.js,Node.js) projects </p>
-                <button onClick={()=>console.log("Connect")} className="btn btn-dark">Let's Connect <ArrowUpRightCircle size={25}/></button>
+                <p>Backend engineer with 2+ years building secure, high-volume Node.js services for mission-critical BFSI / FinTech platforms, including SWIFT / ISO 20022 payment messaging. I own features end to end, from design and microservices to deployment and production support. B.Tech CSE, IIIT Trichy.</p>
+                <button onClick={()=>window.open(LINKEDIN,"_blank","noopener")} className="btn btn-dark">Let's Connect <ArrowUpRightCircle size={25}/></button>
               </Col>
               <Col xs={12} md={6} xl={5}>
                  <img className="img-fluid" src={headerImg} alt="header"/>
