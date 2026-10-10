@@ -52,7 +52,6 @@ export const NavBar =()=> {
                 <a href={GITHUB} target="_blank" rel="noreferrer"><img src = {navIcon2} alt = "GitHub"/></a>
                 <a href={STACKOVERFLOW} target="_blank" rel="noreferrer"><img src = {navIcon3} alt = "Stack Overflow"/></a>
              </div>
-             <button className='vvd' onClick={()=>window.open(LINKEDIN,"_blank","noopener")}><span>Let's Connect</span></button>
           </span>
         </Navbar.Collapse>
       </Container>
