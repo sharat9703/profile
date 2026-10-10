@@ -1,8 +1,8 @@
 import React,{ useState , useEffect } from "react";
 import {Container,Row,Col} from "react-bootstrap";
-import {ArrowUpRightCircle} from "react-bootstrap-icons";
+import {ArrowUpRightCircle, Download} from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
-import { LINKEDIN } from "../links";
+import { LINKEDIN, RESUME } from "../links";
 
 export const Banner = ()=>{
     const [loopNum,setLoopNum] = useState(0);
@@ -46,7 +46,10 @@ return(
                 <span className="tagline">Software Development Engineer (Backend)</span>
                 <h1>{`Hi, I am Sharat,`} <br/><span className="wrap">a {text}</span></h1>
                 <p>Backend engineer with 2+ years building secure, high-volume Node.js services for mission-critical BFSI / FinTech platforms, including SWIFT / ISO 20022 payment messaging. I own features end to end, from design and microservices to deployment and production support. B.Tech CSE, IIIT Trichy.</p>
-                <button onClick={()=>window.open(LINKEDIN,"_blank","noopener")} className="btn btn-dark">Let's Connect <ArrowUpRightCircle size={25}/></button>
+                <div className="banner-actions">
+                  <button onClick={()=>window.open(LINKEDIN,"_blank","noopener")} className="btn btn-dark">Let's Connect <ArrowUpRightCircle size={25}/></button>
+                  <a href={RESUME} download className="btn btn-outline-light">Download Resume <Download size={22}/></a>
+                </div>
               </Col>
               <Col xs={12} md={6} xl={5}>
                  <img className="img-fluid" src={headerImg} alt="header"/>
