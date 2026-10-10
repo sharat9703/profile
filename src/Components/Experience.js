@@ -14,8 +14,7 @@ const roles = [{
         "Automated release-patch prep from over an hour to 4–5 minutes; authored Claude Code skills and hooks for team workflows",
     ]
 },{
-    title : "Computer Science & Mathematics Tutor",
-    org : "Independent",
+    title : "Technical Trainer",
     period : "January 2023 – May 2024 · Bangalore",
     points : [
         "Taught CS and mathematics to ~30 students while sharpening DSA and system design fundamentals",
@@ -39,7 +38,7 @@ export const Experience = ()=>{
                         {roles.map((role)=>(
                             <div className="exp-item" key={role.title}>
                                 <h4>{role.title}</h4>
-                                <div className="exp-meta">{role.org} · {role.period}</div>
+                                <div className="exp-meta">{[role.org, role.period].filter(Boolean).join(" · ")}</div>
                                 <ul>
                                     {role.points.map((point)=><li key={point}>{point}</li>)}
                                 </ul>
