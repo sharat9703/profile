@@ -228,12 +228,29 @@ nav.navbar .navbar-toggler[aria-expanded = "true"] .navbar-toggler-icon{
   line-height: 1.5em;
   width:96%;
 }
+.banner .banner-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 60px;
+}
+.banner .banner-actions .btn{
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.banner .banner-actions a.btn:hover{
+  color: #121212;
+}
 .banner button{
   color: #fff;
   background-color: dark;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 60px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -490,6 +507,9 @@ a.proj-link {
 }
 .footer .social-icon {
   margin: 0 0 24px;
+}
+.footer .resume-link {
+  margin-bottom: 24px;
 }
 .footer small {
   display: block;
