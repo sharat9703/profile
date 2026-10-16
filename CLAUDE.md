@@ -25,7 +25,7 @@ Linting is CRA's built-in ESLint (`react-app` config), surfaced during `npm star
 - `src/links.js` is the single source for external profile URLs and the resume path. Reuse these constants rather than hardcoding URLs.
 - The resume is `public/Sharat_Yaragatti_Resume.pdf`, referenced via `process.env.PUBLIC_URL` so it resolves under the `/profile` subpath set by `homepage` in `package.json`. Any other `public/` asset must do the same.
 - All styling is in `src/App.css`: design tokens as CSS custom properties on `:root` (ink/vault/rule/paper/slate/brass palette, IBM Plex Sans + Mono loaded from Google Fonts in `public/index.html`), plain class names, CSS grid, breakpoints at 900px and 640px. No CSS framework; icons come from `react-bootstrap-icons`.
-- The hero is text only: greeting, tagline and resume-summary intro, full width.
+- The hero is the intro text beside a portrait (`src/assets/img/sharat.jpg`, a 520x650 crop of the original photo); `sharat-avatar.jpg` is the 96px nav avatar.
 
 ## Branching
 

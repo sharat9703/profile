@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RESUME } from '../links';
+import avatar from '../assets/img/sharat-avatar.jpg';
 
 const links = [["About", "#about"], ["Experience", "#experience"], ["Skills", "#skills"], ["Projects", "#projects"], ["Contact", "#contact"]];
 
@@ -15,7 +16,7 @@ export const NavBar = ()=>{
     return (
         <header className={scrolled ? "nav scrolled" : "nav"}>
             <div className="wrap nav-inner">
-                <a href="#top" className="brand"><span className="mark">SY</span>Sharat Yaragatti</a>
+                <a href="#top" className="brand"><img className="avatar" src={avatar} alt="" width="32" height="32"/>Sharat Yaragatti</a>
                 <nav className="nav-links">
                     {links.map(([label, href])=><a key={href} href={href}>{label}</a>)}
                 </nav>
