@@ -1,63 +1,62 @@
-import React,{ useState , useEffect } from "react";
-import {Container,Row,Col} from "react-bootstrap";
-import {ArrowUpRightCircle, Download} from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
-import { LINKEDIN, RESUME } from "../links";
+import React from "react";
+import { Download, GeoAlt } from "react-bootstrap-icons";
+import { RESUME } from "../links";
+
+// The hero's signature: a profile written as a SWIFT MT103 customer credit transfer.
+const message = [
+    ["{1:", "F01SHARATYAINBB}"],
+    [":20:", "SY-PROFILE-2026"],
+    [":23B:", "CRED"],
+    [":50K:", "/SHARAT YARAGATTI"],
+    ["", "SDE BACKEND, MUMBAI"],
+    [":59:", "/YOUR ENGINEERING TEAM"],
+    [":70:", "NODE.JS TYPESCRIPT ORACLE"],
+    ["", "RABBITMQ DOCKER NGINX"],
+    [":71A:", "OUR"],
+    ["-}", ""],
+];
+
+const stats = [
+    ["~10K", "transactions a day through queue-backed sync"],
+    ["60+", "endpoints behind the AES/RSA encryption layer"],
+    ["100+", "production defects closed with root cause"],
+    ["<1s", "Oracle reporting queries, down from ~2s"],
+];
 
 export const Banner = ()=>{
-    const [loopNum,setLoopNum] = useState(0);
-    const [isDeleting,setIsDeleting] = useState(false);
-    const toRotate = ["Backend Engineer", "Node.js & TypeScript Developer", "FinTech Engineer"];
-    const  [text,setText] = useState("");
-    const [delta,setdelta] = useState(200- Math.random()*100);
-    const period = 1000;
-    
-    useEffect(()=>{
-        let ticker = setInterval(()=>{
-         tick();
-        },delta)
-
-        return ()=> {clearInterval(ticker)}
-    })
-       
-    function tick() {
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-        setText(updatedText);
-        if (isDeleting) {
-            setdelta(prevdelta => prevdelta / 2);
-        }
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
-            setdelta(period);
-        } else if (isDeleting && updatedText === "") {
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setdelta(200);
-        }
-    }
-
-return(
-    <section className="banner" id= "home">
-        <Container>
-            <Row className="align-items-center">
-              <Col xs={12} md={6} xl={7}>
-                <span className="tagline">Software Development Engineer (Backend)</span>
-                <h1>{`Hi, I am Sharat,`} <br/><span className="wrap">a {text}</span></h1>
-                <p>Backend engineer with 2+ years building secure, high-volume Node.js services for mission-critical BFSI / FinTech platforms, including SWIFT / ISO 20022 payment messaging. I own features end to end, from design and microservices to deployment and production support. B.Tech CSE, IIIT Trichy.</p>
-                <div className="banner-actions">
-                  <button onClick={()=>window.open(LINKEDIN,"_blank","noopener")} className="btn btn-dark">Let's Connect <ArrowUpRightCircle size={25}/></button>
-                  <a href={RESUME} download className="btn btn-outline-light">Download Resume <Download size={22}/></a>
+    return (
+        <section className="hero" id="top">
+            <div className="wrap hero-grid">
+                <div className="hero-copy">
+                    <p className="status"><span className="dot"/>Open to backend and FinTech roles</p>
+                    <h1>I build the backend services banks move money through.</h1>
+                    <p className="lede">Software Development Engineer at Credence Analytics. Two years of Node.js and TypeScript on BFSI treasury platforms: SWIFT and ISO 20022 payment messaging, forex, KYC and the integrations that hold them together.</p>
+                    <p className="where"><GeoAlt aria-hidden="true"/> Mumbai, India</p>
+                    <div className="actions">
+                        <a href="#contact" className="btn btn-brass">Get in touch</a>
+                        <a href={RESUME} download className="btn btn-quiet"><Download aria-hidden="true"/> Download resume</a>
+                    </div>
                 </div>
-              </Col>
-              <Col xs={12} md={6} xl={5}>
-                 <img className="img-fluid" src={headerImg} alt="header"/>
-              </Col>
-            </Row>
-        </Container>
-
-    </section>
-)
+                <figure className="mt">
+                    <figcaption>Outgoing MT103</figcaption>
+                    <pre aria-label="Profile summary formatted as a SWIFT MT103 message">
+                        {message.map(([tag, value], i)=>(
+                            <span className="mt-line" style={{"--i": i}} key={i}><b>{tag}</b>{value}</span>
+                        ))}
+                    </pre>
+                    <div className="mt-status" style={{"--i": message.length}}>
+                        <span>Status</span><strong>ACSC</strong><span>Settled</span>
+                    </div>
+                </figure>
+            </div>
+            <div className="wrap">
+                <dl className="stats">
+                    {stats.map(([figure, label])=>(
+                        <div key={figure}><dt>{figure}</dt><dd>{label}</dd></div>
+                    ))}
+                </dl>
+                <p className="clients">Shipped for <span>SBI</span><span>ICICI Bank</span><span>Yes Bank</span><span>Thomas Cook</span></p>
+            </div>
+        </section>
+    )
 }
-export default Banner;

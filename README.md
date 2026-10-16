@@ -2,7 +2,7 @@
 
 Personal portfolio site, live at https://sharat9703.github.io/profile
 
-Built with React (Create React App) and React-Bootstrap.
+Built with React (Create React App) and hand-written CSS.
 
 ```bash
 npm install
