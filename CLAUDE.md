@@ -22,7 +22,7 @@ Linting is CRA's built-in ESLint (`react-app` config), surfaced during `npm star
 
 - `src/App.js` renders a fixed vertical stack: `NavBar` then `Banner` (hero, stats, clients), `About`, `Experience`, `Skills`, `Projects`, `Contact` (includes the footer). Navigation is in-page anchors matched to each section's `id`.
 - Content is hardcoded as arrays at the top of each component in `src/Components/`. Editing site content means editing these files.
-- `src/links.js` is the single source for external profile URLs and the resume path. Reuse these constants rather than hardcoding URLs.
+- `src/links.js` is the single source for external profile URLs, email, phone and the resume path. Reuse these constants rather than hardcoding URLs.
 - The resume is `public/Sharat_Yaragatti_Resume.pdf`, referenced via `process.env.PUBLIC_URL` so it resolves under the `/profile` subpath set by `homepage` in `package.json`. Any other `public/` asset must do the same.
 - All styling is in `src/App.css`: design tokens as CSS custom properties on `:root` (ink/vault/rule/paper/slate/brass palette, IBM Plex Sans + Mono loaded from Google Fonts in `public/index.html`), plain class names, CSS grid, breakpoints at 900px and 640px. No CSS framework; icons come from `react-bootstrap-icons`.
 - The hero is the intro text beside a portrait (`src/assets/img/sharat.jpg`, a 520x650 crop of the original photo); `sharat-avatar.jpg` is the 96px nav avatar.
