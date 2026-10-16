@@ -233,6 +233,8 @@ h1 {
 .stack > div:last-child { border-bottom: 1px solid var(--rule); }
 .stack dt { font-weight: 600; }
 .stack dd { display: flex; flex-wrap: wrap; gap: 6px 22px; color: #c3c8d4; }
+.stack .core, .core-key { color: var(--brass); font-weight: 500; }
+.stack .familiar dt, .stack .familiar dd { color: var(--slate); }
 
 /* Projects */
 .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
