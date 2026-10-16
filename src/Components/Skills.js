@@ -7,7 +7,7 @@ const groups = [
     ["Cloud & DevOps", ["AWS", "Docker", "NGINX", "Git", "GitLab CI/CD", "Linux"]],
     ["Practices & domain", ["DSA", "System Design (HLD/LLD)", "Application Security (AES/RSA, XSS)", "SWIFT MT / ISO 20022", "Forex & Treasury", "Payments", "KYC / Regulatory Compliance"]],
     ["AI engineering", ["MCP server development", "Claude Code (skills, plugins, hooks, subagents)", "OpenAI / Gemini APIs"]],
-    ["Familiar with", ["Kafka", "NestJS", "Kubernetes", "PostgreSQL"]],
+    ["Familiar with", ["React.js", "HTML", "CSS", "Bootstrap 5", "Kafka", "NestJS", "Kubernetes", "PostgreSQL"]],
 ];
 
 // What the resume calls out as daily, production-depth work.
